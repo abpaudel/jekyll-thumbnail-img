@@ -7,6 +7,12 @@ Add the following to your `Gemfile`:
 gem 'jekyll-thumbnail-img'
 ```
 
+And then add the plugin to your config:
+```
+plugins:
+  - jekyll-thumbnail-img
+```
+
 # Usage
 The plugin provides a Liquid filter `thumbnail_img` as follows:
 ```
