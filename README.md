@@ -7,7 +7,7 @@ Add the following to your `Gemfile`:
 gem 'jekyll-thumbnail-img'
 ```
 
-And then add the plugin to your _config.yml:
+And then add the plugin to your `_config.yml`:
 ```
 plugins:
   - jekyll-thumbnail-img
