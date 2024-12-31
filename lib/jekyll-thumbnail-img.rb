@@ -12,7 +12,9 @@ module Jekyll
 
     def render(context)
       source, width = @markup.split.map(&:strip)
-      source = context[source] if context[source]  # resolve liquid vars
+      # resolve liquid vars
+      source = context[source] if context[source]
+      width = context[width] if context[width]
 
       raise "Usage: {% thumbnail_img /path/to/image.png 500 %}" unless source && width
       raise "File #{source} not found" unless File.exist?(File.join(context.registers[:site].source, source))
