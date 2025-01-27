@@ -25,7 +25,7 @@ module Jekyll
         source: File.join(context.registers[:site].source, source),
         dest: File.join(context.registers[:site].dest, dest),
         width: width
-      }
+      } unless @@pending.any? { |thumb| thumb[:source] == source && thumb[:width] == width }
 
       dest
     end
