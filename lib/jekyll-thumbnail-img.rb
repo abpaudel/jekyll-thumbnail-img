@@ -23,13 +23,13 @@ module Jekyll
 
       # Queue thumbnail for generation
       thumb_filename = "#{File.basename(source, '.*')}_#{width}w#{File.extname(source)}"
-      thumb_dir = File.join('.thumbnails', File.dirname(source), 'thumbnails')
+      cache_dir = File.join(site.config["cache_dir"], "jekyll-thumbnail-img/img-cache", File.dirname(source), "thumbnails")
       dest = File.join(File.dirname(source), "thumbnails", thumb_filename)
 
       # Add to pending list if not already there
       @@pending << {
         source: File.join(site.source, source),
-        cache: File.join(site.source, thumb_dir, thumb_filename),
+        cache: File.join(cache_dir, thumb_filename),
         dest: File.join(site.dest, dest),
         width: width
       } unless @@pending.any? { |thumb| thumb[:source] == source && thumb[:width] == width }
